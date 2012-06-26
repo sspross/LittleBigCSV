@@ -1,0 +1,95 @@
+LittleBigCVS 0.1b
+#################
+
+EINFÜHRUNG
+------------------------------------------------------------------
+LittleBigCVS ist ein kleines und zu gleich nicht
+unmächtiges Online-CVS (Current Versions System).
+Benötigt wird ein Server, der PHP5 und die Funktion
+'shell_exec()' erlaubt und eine mySQL Datenbank.
+
+INSTALLATION
+------------------------------------------------------------------
+Befolge folgende Schritte zur Installation:
+
+1.	Unzippe die Datei 'LittleBigCVS.zip' in irgend
+	einen Ordner auf deinem lokalen Computer.
+
+2.	Lade den entzippten Ordner 'cvs' in irgend einen
+	Ordner auf deinem Server.
+
+3.	Stelle sicher, dass der Ordner 'cvs' folgende
+	Dateien und Ordner enthält:
+
+		DATEIEN
+		-------
+		- index.php
+	
+		ORDNER
+		------
+		- source (leer)
+		- users (leer)
+		- utils ('default.css', 'file.gif', 'folder.gif')
+		- versions (leer)
+	
+4.	Stelle sicher, dass die '.php' Dateien im Ordner
+	'cvs' mit PHP5 ausgeführt werden und dass die
+	Funktion 'shell_exec()' erlaubt ist.
+
+5.	Öffne die Datei 'index.php' und passe dort die
+	Einstellungen 'settings' und 'users' an.
+
+6.	Nun lade noch alle deine Dateien und Ordner
+	die du vom CVS verwalten lassen möchtes in den
+	Ordner 'source'.
+
+7.	Logge dich nun beim LittleBigCVS ein, indem du
+	auf den Ordner 'cvs' über einen Browser zugreifst.
+	Automatisch werden in der Datenbank alle benötigten
+	Tabellen und im Ordner 'users' dein Userordner
+	erstellt.
+
+BENUTZUNG
+------------------------------------------------------------------
+Nun kannst du deinen ganzen Source, den du in den
+Ordner 'source' gelegt hast, durchforsten und
+Dateien anzeigen und auch auschecken. Ausgecheckte
+Dateien findest du dann in der 'my files' Ansicht.
+Die 'my files' Ansicht stellt automatisch alle 
+Dateien des Ordners 'users/deinusername' dar. Das
+heisst, wenn du ein File in der 'project files'
+Ansicht auscheckst, kopiert es eine Sicherung in
+den Ordner 'versions' und einen Hardlink in deinen
+Userordner. Somit kannst du empfohlenerweise mit
+einem FTP Programm direkt auf deinen Userordner 
+zugreifen und dort "live" Dateien ändern. Unter
+"live" verstehe ich die Methode die dank den
+Hardlinks möglich ist. Wenn du also eine Datei
+in deinem Userordner veränderst, veränderst du
+eigentlich die Datei im 'source' Ordner. Das heisst
+also, dass jederzeit das Projekt mit den AKTUELLSTEN
+Dateien über den 'cvs/source/' Pfad über einen
+Browser erreichbar ist, egal wer welche Dateien
+aus- oder eingecheckt hat. Somit müssen nicht jedesmal,
+wenn das Zusammenspiel zwische den geänderten und
+den anderen Dateien getesten werden will, die
+ausgecheckten Dateien zuerst eingecheckt werden! Es
+empfiehlt sich also, den Usern nur Zugriff (FTP) auf
+ihren Userordner im Ordner 'users' zu gewähren.
+
+FEATURES
+------------------------------------------------------------------
+-	Es ist nicht nötig, den Usern FTP Accounts
+	einzurichten, da die Dateien auch in der 'my files'
+	Ansicht bearbeitet werden können.
+	
+COPYRIGHT
+------------------------------------------------------------------
+Das Copyright liegt bei Silvan Spross. Das Script und der Code
+können zur nichtkommerziellen Verwendung frei benutzt werden.
+
+ANMERKUNG
+------------------------------------------------------------------
+Ich möchte darauf hinweisen, dass das Script bzw. Tool sich noch
+in einer Betaphase befindet und ich so keinerlei Garantie dafür
+übernehme, dass Dateien gelöscht oder verloren gehen können. ;)
